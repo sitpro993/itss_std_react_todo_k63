@@ -37,9 +37,14 @@ function Todo() {
     putItems(newItems);
   };
 
+  const handleAdd = (text) => {
+    putItems([...items, { key: getKey(), text, done: false }]);
+  };
+
   return (
     <div className="panel">
       <div className="panel-heading">ITSS ToDoアプリ</div>
+      <Input onAdd={handleAdd} />
       {items.map((item) => (
         <TodoItem key={item.key} item={item} onCheck={handleCheck} />
       ))}
