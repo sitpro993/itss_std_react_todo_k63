@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function Input({ onAdd }) {
-  const [text, setText] = React.useState("");
+  const [text, setText] = useState("");
 
   const handleChange = (e) => setText(e.target.value);
 
@@ -16,7 +16,7 @@ function Input({ onAdd }) {
       <input
         class="input"
         type="text"
-        placeholder="Enter to add"
+        placeholder="Todoを入力してください"
         value={text}
         onChange={handleChange}
         onKeyDown={handleKeyDown}

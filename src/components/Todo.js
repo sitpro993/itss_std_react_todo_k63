@@ -1,3 +1,4 @@
+/* eslint-disable array-callback-return */
 import React, { useState } from "react";
 
 import TodoItem from "./TodoItem";
@@ -13,7 +14,7 @@ import { getKey } from "../lib/util";
 function Todo() {
   const [items, putItems, clearItems] = useStorage();
 
-  const [filter, setFilter] = React.useState("ALL");
+  const [filter, setFilter] = useState("ALL");
 
   const displayItems = items.filter((item) => {
     if (filter === "ALL") return true;
